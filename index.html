@@ -248,8 +248,9 @@
             justify-content: center;
         }
         .galeria img {
-            width: auto;
-            height: auto; /* Tamaño uniforme */
+            width: 100%;
+            height: 200px; /* Tamaño uniforme */
+            object-fit: cover; /* tamaño uniforme */
             border-radius: 5px;
         }
         .mostrar {
@@ -263,7 +264,7 @@
     <button class="boton-galeria" onclick="toggleGaleria()">Mostrar/Ocultar Galería</button>
 
     <div id="galeria" class="galeria">
-        <img src="" alt="Foto 1">
+        <img src="foto1.jpg" alt="Foto 1">
         <img src="foto2.jpg" alt="Foto 2">
         <img src="GPH-23.jpg" alt="Foto 3">
         <img src="GPH-77.jpg" alt="Foto 4">
