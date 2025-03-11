@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5Herencia - Banda de Rock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #2b0707;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2b0707;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 10px rgba(43, 7, 7);
+        }
+        header img {
+            height: 200px;
+            margin-right: 15px;
+        }
+        .highlight {
+            color: #ab0d0d;
+            font-weight: 700;
+        }
+        .carousel {
+            position: relative;
+            max-width: 400px;
+            margin: 30px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(43, 7, 7);
+        }
+        .carousel img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: none;
+            border-radius: 10px;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .bio {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            background-color: #2b0707;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(43, 7, 7);
+        }
+        .toggle-button {
+            background-color: #2b0707;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #e55b00;
+        }
+        .more-info {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Logo de 5Herencia">
+        5Herencia
+    </header>
+    
+    <section class="carousel">
+        <img src="foto3.jpg" class="active" alt="Tiziano Sanabria">
+        <img src="Foto guille.jpg" alt="Guillermo Franco">
+        <img src="foto5.jpg" alt="Juani Gallandat">
+        <img src="foto6.jpg" alt="Mariano Maslowski">
+    </section>
+    
+    <section class="bio">
+        <p><span class="highlight">5Herencia</span> es una banda de rock alternativo de Posadas, Misiones, que combina diversas influencias musicales para crear un sonido auténtico y distintivo.</p>
+        <button class="toggle-button" onclick="toggleInfo(this)">Más información</button>
+        <div class="more-info">
+            <p>La banda nació a partir de una conversación en Instagram entre el guitarrista <span class="highlight">Guillermo Franco</span> y el baterista <span class="highlight">Juani Gallandat</span>, quienes se convirtieron en los principales fundadores del proyecto.</p>
+            <p>La banda está integrada por:</p>
+            <p><span class="highlight">Tiziano Sanabria</span> - Voz y guitarra</p>
+            <p><span class="highlight">Guillermo Franco</span> - Guitarra</p>
+            <p><span class="highlight">Juani Gallandat</span> - Batería</p>
+            <p><span class="highlight">Mariano Maslowski</span> - Bajo</p>
+            <p>Han tocado en diversos escenarios, desde pequeños bares hasta el festival Makerland, donde abrieron el show de La T y La M.
+             </p>
+             <p>Con su estilo único de rock alternativo <span class="highlight">5Herencia</span> sigue ganando terreno y conquistando a nuevos seguidores en la escena musical argentina.</p>
+            <p>El nombre <span class="highlight">5Herencia</span> proviene de una historia personal de <span class="highlight">Guillermo Franco</span>, quien heredó el nombre de la antigua banda de su tío, llamada 5Herencia. Este legado se convirtió en un símbolo de continuidad y pasión por la música, dando identidad a un grupo que sigue creciendo y evolucionando.</p>
+        </div>
+    </section>
+    
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showNextImage() {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000);
+
+        function toggleInfo(button) {
+            const moreInfo = document.querySelector('.more-info');
+            if (moreInfo.style.display === 'none' || moreInfo.style.display === '') {
+                moreInfo.style.display = 'block';
+                button.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5Herencia</title>
+    <style>
+        html, body {
+            height: 100%;
+            background: YOUR_BACKGROUND_COLOR; /* Reemplaza con tu color de fondo original */
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("5h.jpg") repeat;
+            background-size: 150px; /* Ajusta el tamaño del logo */
+            opacity: 0.1; /* Ajusta la opacidad para que no interfiera */
+            z-index: -1; /* Envía la imagen de fondo detrás del contenido */
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección de redes sociales -->
+<div style="text-align: center; margin-top: 50px;">
+    <h3>Síguenos en nuestras redes</h3>
+    <p>¡No te pierdas de nada! Síguenos para más contenido.</p>
+    <div>
+        <a href="https://www.youtube.com/@5herenciaA" target="_blank">
+            <img src="youtube-white@2x.png" alt="YouTube" width="40" style="margin: 0 15px;">
+        </a>
+        <a href="https://www.instagram.com/5herenciaa/" target="_blank">
+            <img src="Instagram with.png" alt="Instagram" width="40" style="margin: 0 15px;">
+        </a>
+        <a href="https://www.tiktok.com/@5herenciaa?lang=es" target="_blank">
+            <img src="tiktok-white@2x.png" alt="TikTok" width="40" style="margin: 0 15px;">
+        </a>
+        <a href="#" target="_blank">
+            <img src="spory.png" alt="Spotify" width="40" style="margin: 0 15px;">
+        </a>
+    </div>
+</div>
+<!-- Sección de contacto -->
+<div style="text-align: center; margin-top: 50px; font-family: 'Georgia', serif;">
+    <h3 style="color: white;">Contáctanos</h3>
+    <p style="color: white;">Si tienes alguna pregunta o deseas más información, no dudes en escribirnos.</p>
+    <div>
+        <!-- Enlace de correo electrónico -->
+        <p>
+            <strong style="color: white;">Email:</strong> 
+            <a href="mailto:5herenciaoficial@gmail.com" style="color: white; text-decoration: none;">
+                <img src="gmail-icon-free-png.webp" alt="Email" width="25" style="vertical-align: middle; margin-right: 10px;">
+                5herenciaoficial@gmail.com
+            </a>
+        </p>
+        <!-- Enlace de teléfono y WhatsApp -->
+        <p>
+            <strong style="color: white;">Teléfono/WhatsApp:</strong> 
+            <a href="https://wa.me/5493764564528" target="_blank" style="color: white; text-decoration: none;">
+                <img src="png-clipart-whatsapp-logo-computer-icons-whatsapp-cdr-text-thumbnail.png" alt="WhatsApp" width="25" style="vertical-align: middle; margin-right: 10px;">
+                <span>+54 9 3764 564528</span>
+            </a>
+        </p>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .titulo-galeria {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #d97b7b;
+        }
+        .boton-galeria {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #162c44;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .boton-galeria:hover {
+            background-color: #0056b3;
+        }
+        .galeria {
+            display: none;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .galeria img {
+            width: 100%;
+            height: 200px; /* Tamaño uniforme */
+            object-fit: cover; /* Recorta las imágenes para que queden del mismo tamaño */
+            border-radius: 5px;
+        }
+        .mostrar {
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="titulo-galeria">Galería de Fotos</div>
+    <button class="boton-galeria" onclick="toggleGaleria()">Mostrar/Ocultar Galería</button>
+
+    <div id="galeria" class="galeria">
+        <img src="foto1.jpg" alt="Foto 1">
+        <img src="foto2.jpg" alt="Foto 2">
+        <img src="GPH-23.jpg" alt="Foto 3">
+        <img src="GPH-77.jpg" alt="Foto 4">
+        <img src="GPH-181.jpg" alt="Foto 5">
+        <img src="GPH-240.jpg" alt="Foto 6">
+        <img src="GPH-294.jpg" alt="Foto 7">
+        <img src="GPH-303.jpg" alt="Foto 8">
+        <img src="WhatsApp Image 2025-03-10 at 20.53.17.jpeg" alt="Foto 9">
+        <img src="WhatsApp Image 2025-03-11 at 08.07.16.jpeg" alt="Foto 10">
+        <img src="WhatsApp Image 2025-03-11 at 08.07.18.jpeg" alt="Foto 10">
+        <img src="WhatsApp Image 2025-03-11 at 08.07.20 (2).jpeg" alt="Foto 10">
+        <img src="WhatsApp Image 2025-03-11 at 08.07.20 (1).jpeg" alt="Foto 10">
+        <img src="WhatsApp Image 2025-03-11 at 08.07.20.jpeg" alt="Foto 10">
+        <img src="Universal club 1.jpg" alt="Foto 10">
+    </div>
+
+    <script>
+        function toggleGaleria() {
+            var galeria = document.getElementById("galeria");
+            galeria.classList.toggle("mostrar");
+        }
+    </script>
+
+</body>
+</html>
